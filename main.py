@@ -1,10 +1,11 @@
-from typing import List
 from fastapi import FastAPI
-
+from prometheus_fastapi_instrumentator import Instrumentator
 from app import services
 from app.schema import UserIn, BaseResponse, UserListOut
 
 app = FastAPI()
+
+Instrumentator().instrument(app).expose(app)
 
 
 @app.get("/")
@@ -22,7 +23,8 @@ async def user_create(user: UserIn):
     """
     try:
         services.add_userdata(user.dict())
-    except:
+    except Exception as e:
+        print(f"Error: {e}")
         return {"success": False}
     return {"success": True}
 

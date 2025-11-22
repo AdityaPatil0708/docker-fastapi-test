@@ -4,14 +4,14 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 datafolder = os.path.join(BASE_DIR, "data")
-datasource = os.path.join(datafolder, "users.json")
+datasource = os.path.join(datafolder, "info.txt")
 
 def check_dataset_exists():
     if not os.path.exists(datafolder):
-        os.mkdir(datafolder)
+        os.makedirs(datafolder)
     if not os.path.exists(datasource):
         with open(datasource, "w") as f:
-            f.write("")
+            f.write('{"data": []}')
             
             
 def read_usersdata():

@@ -1,1 +1,19 @@
-Dataset is stored in this directory.
+{
+  "data": [
+    {
+      "first_name": "aditya",
+      "last_name": "patil",
+      "age": 21
+    },
+    {
+      "first_name": "manthan",
+      "last_name": "dohale",
+      "age": 20
+    },
+    {
+      "first_name": "bhupen",
+      "last_name": "mali",
+      "age": 21
+    }
+  ]
+}
