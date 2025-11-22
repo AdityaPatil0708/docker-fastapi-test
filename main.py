@@ -7,7 +7,6 @@ app = FastAPI()
 
 Instrumentator().instrument(app).expose(app)
 
-
 @app.get("/")
 async def index():
     """
